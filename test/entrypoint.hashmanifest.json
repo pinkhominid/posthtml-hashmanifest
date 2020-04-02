@@ -1,0 +1,5 @@
+{
+  "base/style2.css": "base/replaced.css",
+  "./base/script2.js": "./base/replaced.js",
+  "base/img2.png": "base/replaced.png"
+}
