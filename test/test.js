@@ -1,5 +1,5 @@
-import posthtml from 'posthtml'
-import processHashManifest from '../index.js'
+import posthtml from 'posthtml';
+import processHashManifest from '../index.js';
 
 const input = `
   <html>
@@ -14,7 +14,7 @@ const input = `
       <img src=rebased/img2.png>
     </body>
   </html>
-`
+`;
 
 const expected = `
   <html>
@@ -29,37 +29,37 @@ const expected = `
       <img src="rebased/replaced.png">
     </body>
   </html>
-`
+`;
 
-let exitCode = 1 // default fail
+let exitCode = 1; // default fail
 
 posthtml([
-    // Test manifest object
-    processHashManifest({
-      manifest: {
-        'base/style1.css': 'base/replaced.css',
-        './base/script1.js': './base/replaced.js',
-        'base/img1.png': 'base/replaced.png',
-      }
-    }),
+  // Test manifest object
+  processHashManifest({
+    manifest: {
+      'base/style1.css': 'base/replaced.css',
+      './base/script1.js': './base/replaced.js',
+      'base/img1.png': 'base/replaced.png',
+    },
+  }),
 
-    // Test manifest filepath, and rebasing manifest paths
-    processHashManifest({
-      manifest: './test/entrypoint.hashmanifest.json',
-      rebase: {
-        'base': 'rebased',
-        './base': './rebased'
-      }
-    }),
-  ])
+  // Test manifest filepath, and rebasing manifest paths
+  processHashManifest({
+    manifest: './test/entrypoint.hashmanifest.json',
+    rebase: {
+      base: 'rebased',
+      './base': './rebased',
+    },
+  }),
+])
   .process(input)
-  .then(actual => {
+  .then((actual) => {
     if (actual.html !== expected) {
       console.error('Actual:', actual.html, 'Expected:', expected, 'FAIL!');
     } else {
       console.info('Acutal:', actual.html, 'Expected:', expected, 'SUCCESS!');
-      exitCode = 0
+      exitCode = 0;
     }
   })
-  .catch(e => console.error(e))
-  .finally(() => process.exit(exitCode))
+  .catch((e) => console.error(e))
+  .finally(() => process.exit(exitCode));

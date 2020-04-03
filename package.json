@@ -8,20 +8,22 @@
     "test": "test"
   },
   "scripts": {
+    "fmt": "prettier --write {,**/}*.js **/*.md **/*.json",
     "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pinkhominid/posthtml-hashmanifest.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["posthtml", "hashmanifest", "hash", "manifest", "replace", "paths", "assets", "cache", "cache-bust"],
+  "author": "pinkhominid <pinkhominid@birdbomb.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pinkhominid/posthtml-hashmanifest/issues"
   },
   "homepage": "https://github.com/pinkhominid/posthtml-hashmanifest#readme",
   "devDependencies": {
-    "posthtml": "^0.12.0"
+    "posthtml": "^0.12.0",
+    "prettier": "^2.0.2"
   }
 }
