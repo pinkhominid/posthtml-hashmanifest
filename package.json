@@ -1,6 +1,6 @@
 {
   "name": "posthtml-hashmanifest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PostHTML plugin for rewriting static asset paths given a hash manifest",
   "type": "module",
   "main": "index.js",
@@ -15,7 +15,17 @@
     "type": "git",
     "url": "git+https://github.com/pinkhominid/posthtml-hashmanifest.git"
   },
-  "keywords": ["posthtml", "hashmanifest", "hash", "manifest", "replace", "paths", "assets", "cache", "cache-bust"],
+  "keywords": [
+    "posthtml",
+    "hashmanifest",
+    "hash",
+    "manifest",
+    "replace",
+    "paths",
+    "assets",
+    "cache",
+    "cache-bust"
+  ],
   "author": "pinkhominid <pinkhominid@birdbomb.com>",
   "license": "MIT",
   "bugs": {
