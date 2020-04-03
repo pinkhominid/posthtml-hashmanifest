@@ -1,6 +1,6 @@
 {
   "name": "posthtml-hashmanifest",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "PostHTML plugin for rewriting static asset paths given a hash manifest",
   "main": "index.js",
   "directories": {
