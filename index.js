@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import { promisify } from 'util';
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
 
 const readFileAsync = promisify(fs.readFile);
 const attrs = ['src', 'href'];
@@ -9,7 +9,7 @@ const notEmpty = /.+/;
 // https://www.npmjs.com/package/rollup-plugin-entrypoint-hashmanifest
 const defaults = { manifest: './entrypoint.hashmanifest.json' };
 
-export default (opts = {}) => (tree) =>
+module.exports = (opts = {}) => (tree) =>
   new Promise(async (resolve, reject) => {
     opts = Object.assign({}, defaults, opts);
 

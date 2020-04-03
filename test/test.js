@@ -1,5 +1,5 @@
-import posthtml from 'posthtml';
-import processHashManifest from '../index.js';
+const posthtml = require('posthtml');
+const processHashManifest = require('../index.js');
 
 const input = `
   <html>
