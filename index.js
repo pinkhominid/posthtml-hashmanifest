@@ -51,7 +51,7 @@ module.exports = (opts = {}) => (tree) =>
 function rebaseManifestPaths(opts) {
   if (!opts.rebase) return opts.manifest;
 
-  return Object.fromEntries(
+  return objectFromEntries(
     Object.entries(opts.manifest).map((entry) => {
       const origKeyPath = path.parse(entry[0]);
       const origValuePath = path.parse(entry[1]);
@@ -69,4 +69,12 @@ function rebaseManifestPaths(opts) {
       return entry;
     })
   );
+}
+
+// Real Object.fromEntries only available in Node 12+
+function objectFromEntries (iterable) {
+  return [...iterable].reduce((obj, [key, val]) => {
+    obj[key] = val
+    return obj
+  }, {})
 }
